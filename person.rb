@@ -1,8 +1,9 @@
 require './nameable'
+require './rentals'
+require 'date'
 
 class Person < Nameable
-  attr_reader :id
-  attr_accessor :age, :name
+  attr_accessor :name, :age, :rentals, :id
 
   def initialize(age:, name: 'unknown', parent_permission: true)
     super()
@@ -10,9 +11,13 @@ class Person < Nameable
     @name = name
     @age = age
     @parent_permission = parent_permission
+    @rentals = []
   end
 
-  # @return [String]
+  def add_rental(book, date)
+    Rental.new(person: self, date: date, book: book)
+  end
+
   def correct_name
     @name
   end
