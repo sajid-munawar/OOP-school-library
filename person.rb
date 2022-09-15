@@ -12,7 +12,6 @@ class Person < Nameable
     @parent_permission = parent_permission
   end
 
-  # @return [String]
   def correct_name
     @name
   end
