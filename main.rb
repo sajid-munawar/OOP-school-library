@@ -31,6 +31,6 @@ def main
   person_title = CapitalizeDecorator.new(person)
   puts "After capitalization, name is: #{person_title.correct_name}"
   trimmed_person_title = TrimmerDecorator.new(person_title)
-  puts "After both capitalization & trim, name is: #{titled_trimmed_person.correct_name}"
+  puts "After both capitalization & trim, name is: #{trimmed_person_title.correct_name}"
 end
 main
